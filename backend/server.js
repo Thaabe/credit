@@ -1,4 +1,3 @@
-// backend/server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,10 +5,11 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-// Debug allowed origins
+// Add Netlify frontend URL to allowed origins
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
   ? process.env.ALLOWED_ORIGINS.split(',') 
-  : ['http://localhost:5173', 'http://localhost:3000'];
+  : ['http://localhost:5173', 'http://localhost:3000', 'https://gleeful-malabi-d6b08b.netlify.app'];
+
 console.log('Allowed origins:', allowedOrigins);
 
 const app = express();
